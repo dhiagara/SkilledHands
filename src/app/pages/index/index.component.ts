@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+// @ts-ignore
 import noUiSlider from "nouislider";
 
 @Component({
@@ -7,9 +8,9 @@ import noUiSlider from "nouislider";
 })
 export class IndexComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  focus;
-  focus1;
-  focus2;
+  focus:any;
+  focus1:any;
+  focus2:any;
   date = new Date();
   pagination = 3;
   pagination1 = 1;

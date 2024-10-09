@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   constructor(
     private renderer: Renderer2,
     public location: Location,
-    @Inject(DOCUMENT) document
+    @Inject(DOCUMENT) document:any
   ) {}
   @HostListener("window:scroll", ["$event"])
-  onWindowScroll(e) {
+  onWindowScroll(e:any) {
     if (window.pageYOffset > 100) {
       var element = document.getElementById("navbar-top");
       if (element) {

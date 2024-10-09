@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import Chart from "chart.js";
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: "app-landingpage",
@@ -20,7 +20,6 @@ export class LandingpageComponent implements OnInit, OnDestroy {
     gradientFill.addColorStop(1, "rgba(228, 76, 196, 0.14)");
     var chartBig = new Chart(ctx, {
       type: "line",
-      responsive: true,
       data: {
         labels: [
           "JUN",
@@ -59,54 +58,29 @@ export class LandingpageComponent implements OnInit, OnDestroy {
       },
       options: {
         maintainAspectRatio: false,
-        legend: {
-          display: false
-        },
-
-        tooltips: {
-          backgroundColor: "#fff",
-          titleFontColor: "#ccc",
-          bodyFontColor: "#666",
-          bodySpacing: 4,
-          xPadding: 12,
-          mode: "nearest",
-          intersect: 0,
-          position: "nearest"
-        },
         responsive: true,
         scales: {
-          yAxes: [
-            {
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: "rgba(0,0,0,0.0)",
-                zeroLineColor: "transparent"
-              },
-              ticks: {
-                display: false,
-                suggestedMin: 0,
-                suggestedMax: 350,
-                padding: 20,
-                fontColor: "#9a9a9a"
-              }
+          y: {
+            grid: {
+              color: "rgba(0,0,0,0.0)",
+            },
+            ticks: {
+              display: false,
+              minRotation: 0,
+              maxRotation: 350,
+              padding: 20,
+              color: "#9a9a9a"
             }
-          ],
-
-          xAxes: [
-            {
-              barPercentage: 1.6,
-              gridLines: {
-                drawBorder: false,
-                color: "rgba(0,0,0,0)",
-                zeroLineColor: "transparent"
-              },
-              ticks: {
-                padding: 20,
-                fontColor: "#9a9a9a"
-              }
+          },
+          x: {
+            grid: {
+              color: "rgba(0,0,0,0)",
+            },
+            ticks: {
+              padding: 20,
+              color: "#9a9a9a"
             }
-          ]
+          }
         }
       }
     });

@@ -6,12 +6,12 @@ import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
 })
 export class RegisterpageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  focus;
-  focus1;
-  focus2;
+  focus:any;
+  focus1:any;
+  focus2:any;
   constructor() {}
   @HostListener("document:mousemove", ["$event"])
-  onMouseMove(e) {
+  onMouseMove(e:any) {
     var squares1 = document.getElementById("square1");
     var squares2 = document.getElementById("square2");
     var squares3 = document.getElementById("square3");
@@ -23,7 +23,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
 
     var posX = e.clientX - window.innerWidth / 2;
     var posY = e.clientY - window.innerWidth / 6;
-
+    if(squares1 && squares2 && squares3 && squares4 && squares5 && squares6 && squares7 && squares8 ){
     squares1.style.transform =
       "perspective(500px) rotateY(" +
       posX * 0.05 +
@@ -72,6 +72,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
       "deg) rotateX(" +
       posY * -0.02 +
       "deg)";
+    }
   }
 
   ngOnInit() {
